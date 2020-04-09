@@ -12,9 +12,7 @@
     "format": "prettier --check --write \"./**/*.{js,ts,json,yaml,md}\"",
     "lint": "eslint --ext .ts  --max-warnings=0 --fix src/ && prettier --check \"./**/*.{js,ts,json,yaml,md}\"",
     "postversion": "git push && git push --tags",
-    "prepare": "npm run build",
-    "prepublishOnly": "npm test && npm run lint",
-    "preversion": "npm run lint",
+    "prepublishOnly": "npm run build",
     "test": "jest"
   },
   "repository": {
