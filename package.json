@@ -2,8 +2,19 @@
   "name": "daily-node",
   "version": "0.0.1",
   "description": "Node.js client library for the daily.co platform.",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/**/*"
+  ],
   "scripts": {
+    "build": "tsc",
+    "format": "prettier --check --write \"./**/*.{js,ts,json,yaml,md}\"",
+    "lint": "eslint --ext .ts  --max-warnings=0 --fix src/ && prettier --check \"./**/*.{js,ts,json,yaml,md}\"",
+    "postversion": "git push && git push --tags",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,6 +33,18 @@
   "homepage": "https://github.com/sharkyze/daily-node#readme",
   "devDependencies": {
     "@types/node": "^10.17.19",
+    "@typescript-eslint/eslint-plugin": "^2.27.0",
+    "@typescript-eslint/parser": "^2.27.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-config-typescript": "^3.0.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "prettier": "^2.0.4",
     "typescript": "^3.8.3"
   }
 }
