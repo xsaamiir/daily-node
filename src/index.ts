@@ -1,4 +1,4 @@
-import Axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
+import Axios, { AxiosInstance, AxiosRequestConfig } from "axios";
 import { camelCase, snakeCase } from "./switch-case";
 
 export interface DomainConfig {
@@ -219,7 +219,7 @@ export class Daily {
     });
   }
 
-  request<T = any, R = AxiosResponse<T>>(config: AxiosRequestConfig): Promise<R> {
+  request<T>(config: AxiosRequestConfig): Promise<T> {
     return this.client
       .request({
         ...config,
