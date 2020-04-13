@@ -1,6 +1,7 @@
 import { Daily } from "./index";
 
 const token = process.env.DAILY_CO_API_KEY;
+const domainName = process.env.DAILY_CO_DOMAIN_NAME;
 
 let client: Daily;
 
@@ -14,7 +15,7 @@ beforeAll(() => {
 
 it("should fetch domainConfig", async () => {
   const resp = await client.domainConfig();
-  expect(resp.domain_name).toBe("wearepeers");
+  expect(resp.domainName).toBe(domainName);
 });
 
 it("should fetch only one room", async () => {
