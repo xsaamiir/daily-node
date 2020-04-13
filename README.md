@@ -1,5 +1,7 @@
 # daily-node
 
+![Lint & Test](https://github.com/sharkyze/daily-node/workflows/Lint%20&%20Test/badge.svg)
+
 Node.js client library wrapper for the [daily.co platform API](https://docs.daily.co/reference).
 
 ## Installation
