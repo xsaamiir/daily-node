@@ -1,6 +1,8 @@
 # daily-node
 
 ![Lint & Test](https://github.com/sharkyze/daily-node/workflows/Lint%20&%20Test/badge.svg)
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/sharkyze/daily-node.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/sharkyze/daily-node/context:javascript)
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/sharkyze/daily-node.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/sharkyze/daily-node/alerts/)
 
 Node.js client library wrapper for the [daily.co platform API](https://docs.daily.co/reference).
 
