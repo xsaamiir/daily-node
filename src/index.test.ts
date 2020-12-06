@@ -40,3 +40,13 @@ it("should create a room, fetch it and delete it without errors", async function
   const deleted = await client.deleteRoom(room.name);
   expect(room.name).toBe(deleted.name);
 });
+
+it("should create a meeting token", async function () {
+  const resp = await client.createMeetingToken({
+    enableScreenshare: false,
+  });
+  expect(resp.token).not.toBeUndefined();
+
+  const validation = await client.meetingToken(resp.token);
+  expect(validation.enableScreenshare).toBe(false);
+});

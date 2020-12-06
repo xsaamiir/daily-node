@@ -118,6 +118,10 @@ export interface MeetingToken {
   lang?: Language;
 }
 
+export interface MeetingTokenResponse {
+  token: string;
+}
+
 export interface PaginatedRequest {
   limit?: number;
   endingBefore?: string;
@@ -273,13 +277,14 @@ export class Daily {
 
   // Create a new meeting token.
   // https://docs.daily.co/reference#meeting-tokens
-  public async createMeetingToken(data: MeetingToken): Promise<MeetingToken> {
-    return this.request({ method: "POST", url: "/meeting-tokens", data });
+  public async createMeetingToken(data: MeetingToken): Promise<MeetingTokenResponse> {
+    const req = { properties: data };
+    return this.request({ method: "POST", url: "/meeting-tokens", data: req });
   }
 
   // https://docs.daily.co/reference#validate-meeting-token
   // Validate a meeting token
-  public async meetingToken(token: string): Promise<object> {
+  public async meetingToken(token: string): Promise<MeetingToken> {
     return this.request({ method: "GET", url: `/meeting-tokens/${token}` });
   }
 }
